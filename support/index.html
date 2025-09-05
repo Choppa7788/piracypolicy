@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Help - Sipster</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e0ffe8 0%, #baf9c9 50%, #42db7a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #42db7a, #36b868);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .support-card {
+            background: linear-gradient(135deg, #fff, #f8fffe);
+            border: 2px solid #e0ffe8;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(66, 219, 122, 0.2);
+            border-color: #42db7a;
+        }
+
+        .support-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .support-card h3 {
+            color: #2d5a3d;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .support-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .support-card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #42db7a, #36b868);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .support-card a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(66, 219, 122, 0.3);
+        }
+
+        .faq-section {
+            margin: 40px 0;
+        }
+
+        .faq-section h2 {
+            color: #42db7a;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, #f8fffe, #e0ffe8);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid #e0ffe8;
+        }
+
+        .faq-question {
+            background: #42db7a;
+            color: white;
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #36b868;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            color: #333;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .contact-emergency {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .contact-emergency h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-emergency p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-emergency a {
+            display: inline-block;
+            background: white;
+            color: #ee5a24;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .contact-emergency a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background: #2d5a3d;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍸 Support & Help</h1>
+            <p>We're here to help you make the perfect cocktail experience!</p>
+        </div>
+
+        <div class="content">
+            <div class="support-grid">
+                <div class="support-card">
+                    <span class="icon">📧</span>
+                    <h3>Email Support</h3>
+                    <p>Get personalized help from our support team. We typically respond within 48 hours.</p>
+                    <a href="mailto:vivregop@gmail.com?subject=Cocktail App Support Request">Contact Support</a>
+                </div>
+
+                <div class="support-card">
+                    <span class="icon">🐛</span>
+                    <h3>Report Bug</h3>
+                    <p>Found a bug or issue? Let us know and we'll fix it as soon as possible.</p>
+                    <a href="mailto:vivregop@gmail.com?subject=Bug Report - Cocktail App">Report Bug</a>
+                </div>
+
+                <div class="support-card">
+                    <span class="icon">💡</span>
+                    <h3>Feature Request</h3>
+                    <p>Have an idea for a new feature? We'd love to hear your suggestions!</p>
+                    <a href="mailto:vivregop@gmail.com?subject=Feature Request - Cocktail App">Suggest Feature</a>
+                </div>
+
+                <div class="support-card">
+                    <span class="icon">⭐</span>
+                    <h3>Leave Review</h3>
+                    <p>Love the app? Leave us a review on the App Store or Google Play!</p>
+                    <a href="#" onclick="alert('Please visit your app store to leave a review!')">Leave Review</a>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How do I restore my premium subscription?
+                    </div>
+                    <div class="faq-answer">
+                        Go to Settings → Restore Purchases. Make sure you're logged into the same Apple ID or Google account you used to purchase the subscription.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Can I use the app offline?
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Once you've downloaded the app, you can browse all cocktail recipes offline. However, some features like syncing favorites require an internet connection.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How do I change the app language?
+                    </div>
+                    <div class="faq-answer">
+                        Go to Settings in the app and select your preferred language. The app supports multiple languages including English, Japanese, and more.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Why can't I access premium features?
+                    </div>
+                    <div class="faq-answer">
+                        Make sure your subscription is active and try restoring purchases. If the issue persists, contact our support team with your purchase receipt.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How do I cancel my subscription?
+                    </div>
+                    <div class="faq-answer">
+                        Subscriptions are managed through your App Store or Google Play account. Go to your account settings and manage subscriptions from there.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Is the app safe for users under 21?
+                    </div>
+                    <div class="faq-answer">
+                        The app is designed for users of legal drinking age. While recipes are educational, we strongly encourage responsible use and compliance with local laws.
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-emergency">
+                <h3>🚨 Need Immediate Help?</h3>
+                <p>For urgent issues or account problems that need immediate attention</p>
+                <a href="mailto:vivregop@gmail.com?subject=URGENT - Cocktail App Issue">Contact Immediately</a>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #e8f5e8, #d4edd4); padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0;">
+                <h3 style="color: #2d5a3d; margin-bottom: 15px;">💬 Connect With Us</h3>
+                <p style="margin-bottom: 20px; color: #666;">Follow us for updates, tips, and cocktail inspiration!</p>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/ace___eel77?igsh=MTBscXRxemdibzN4aQ%3D%3D&utm_source=qr" 
+                       style="display: inline-flex; align-items: center; gap: 8px; background: #e1306c; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 600;">
+                        📷 Instagram
+                    </a>
+                    <a href="https://jp.linkedin.com/in/ashis-kharel-b59611224" 
+                       style="display: inline-flex; align-items: center; gap: 8px; background: #0077b5; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 600;">
+                        💼 LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Cocktail App. All rights reserved.</p>
+            <p>Making great cocktails accessible to everyone! 🍹</p>
+            <p><strong>Response Time:</strong> We aim to respond to all support requests within 24 hours</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all FAQ answers
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked answer if it wasn't already active
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
